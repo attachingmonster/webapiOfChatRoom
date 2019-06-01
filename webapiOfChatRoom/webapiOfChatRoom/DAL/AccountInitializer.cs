@@ -16,7 +16,7 @@ namespace webapiOfChatRoom.DAL
             var sysUsers = new List<SysUser>
             {               
                 new SysUser {ID=1, UserAccount="Tom",UserPassword=CreateMD5.EncryptWithMD5("123"),RememberPassword="0"},
-                new SysUser {ID=2, UserAccount ="Jerry",UserPassword =CreateMD5.EncryptWithMD5("456"),RememberPassword="0"}
+                new SysUser {ID=2, UserAccount ="Jerry",UserPassword =CreateMD5.EncryptWithMD5("123"),RememberPassword="0"}
                 
             };
             sysUsers.ForEach(s => context.SysUsers.Add(s));
