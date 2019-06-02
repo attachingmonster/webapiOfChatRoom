@@ -12,6 +12,7 @@ namespace webapiOfChatRoom.DAL
         private AccountContext context = new AccountContext();
 
         private GenericRepository<SysUser> sysUserRepository;
+        private GenericRepository<DataModel> dataModelRepository;
 
         public GenericRepository<SysUser> SysUserRepository
         {
@@ -24,8 +25,20 @@ namespace webapiOfChatRoom.DAL
                 return sysUserRepository;
             }
         }
-        
-      
+
+        public GenericRepository<DataModel> DataModelRepository
+        {
+            get
+            {
+                if (this.dataModelRepository == null)
+                {
+                    this.dataModelRepository = new GenericRepository<DataModel>(context);
+                }
+                return dataModelRepository;
+            }
+        }
+
+
         #region Save & Dispose
         public void Save()
         {
