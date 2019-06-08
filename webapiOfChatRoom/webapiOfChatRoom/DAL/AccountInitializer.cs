@@ -13,6 +13,7 @@ namespace webapiOfChatRoom.DAL
     {
         protected override void Seed(AccountContext context)
         {
+            /*
             var sysUsers = new List<SysUser>
             {               
                 new SysUser {ID=1, UserAccount="Tom",UserPassword=CreateMD5.EncryptWithMD5("123"),RememberPassword="0"},
@@ -21,8 +22,8 @@ namespace webapiOfChatRoom.DAL
             };
             sysUsers.ForEach(s => context.SysUsers.Add(s));
             context.SaveChanges();
-          
-          
+          */
+         
         }
     }
 }
