@@ -18,6 +18,7 @@ namespace webapiOfChatRoom.DAL
         public DbSet<SysUser> SysUsers { get; set; }
         public DbSet<DataModel> DataModels { get; set; }
 
+        public DbSet<LoginJournal> LoginJournals { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

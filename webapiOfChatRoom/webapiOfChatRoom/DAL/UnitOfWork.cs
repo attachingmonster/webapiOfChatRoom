@@ -13,6 +13,7 @@ namespace webapiOfChatRoom.DAL
 
         private GenericRepository<SysUser> sysUserRepository;
         private GenericRepository<DataModel> dataModelRepository;
+        private GenericRepository<LoginJournal> loginJournalRepository;
 
         public GenericRepository<SysUser> SysUserRepository
         {
@@ -37,6 +38,19 @@ namespace webapiOfChatRoom.DAL
                 return dataModelRepository;
             }
         }
+
+        public GenericRepository<LoginJournal> LoginJournalRepository
+        {
+            get
+            {
+                if (this.loginJournalRepository == null)
+                {
+                    this.loginJournalRepository = new GenericRepository<LoginJournal>(context);
+                }
+                return loginJournalRepository;
+            }
+        }
+
 
 
         #region Save & Dispose
