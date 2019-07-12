@@ -23,7 +23,12 @@ namespace webapiOfChatRoom.Controllers
                 viewModelInformation = new ViewModelInformation();
                 var sysUser = unitOfWork.LoginJournalRepository.Get().Where(s => s.UserAccount.Equals(viewModelLoginJournal.UserAccount)).FirstOrDefault();
                 sysUser.MacAddress = viewModelLoginJournal.MacAddress;
-                unitOfWork.LoginJournalRepository.Update(sysUser);//更改密码
+                unitOfWork.LoginJournalRepository.Update(sysUser);
+                unitOfWork.Save();
+
+                var user = unitOfWork.SysUserRepository.Get().Where(s => s.UserAccount.Equals(viewModelLoginJournal.UserAccount)).FirstOrDefault();
+                user.UserState = 0;
+                unitOfWork.SysUserRepository.Update(user);//保存状态
                 unitOfWork.Save();
                 throw new Exception("关闭聊天界面信息传输成功");
             }

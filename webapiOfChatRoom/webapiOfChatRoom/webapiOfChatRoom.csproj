@@ -168,6 +168,11 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\LoginJournalController.cs" />
+    <Compile Include="Controllers\SetAdministratorController.cs" />
+    <Compile Include="Controllers\TransferGroupManagerController.cs" />
+    <Compile Include="Controllers\UserListViewController.cs" />
+    <Compile Include="Controllers\UserPermissionController.cs" />
+    <Compile Include="Controllers\UserStateController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="DAL\AccountContext.cs" />
     <Compile Include="DAL\AccountInitializer.cs" />
@@ -184,6 +189,7 @@
     <Compile Include="Repositories\IGenericRepository.cs" />
     <Compile Include="ViewModels\ViewModel.cs" />
     <Compile Include="ViewModels\ViewModelChangePsw.cs" />
+    <Compile Include="ViewModels\ViewModelChatUserMessage.cs" />
     <Compile Include="ViewModels\ViewModelData.cs" />
     <Compile Include="ViewModels\ViewModelDataReturn.cs" />
     <Compile Include="ViewModels\ViewModelInformation.cs" />
@@ -223,6 +229,8 @@
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile10.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile11.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile12.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile2.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile3.pubxml" />
     <None Include="Properties\PublishProfiles\FolderProfile4.pubxml" />

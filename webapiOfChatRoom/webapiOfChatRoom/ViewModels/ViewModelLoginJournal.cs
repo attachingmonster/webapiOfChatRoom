@@ -10,5 +10,6 @@ namespace webapiOfChatRoom.ViewModels
         public string UserAccount { get; set; }
 
         public string MacAddress { get; set; }
+        public int UserState { get; set; }
     }
 }
