@@ -11,19 +11,19 @@ namespace webapiOfChatRoom.DAL
     {
         private AccountContext context = new AccountContext();
 
-        private GenericRepository<SysUser> sysUserRepository;
+        private GenericRepository<ChatRoomUser> chatRoomUserRepository;
         private GenericRepository<DataModel> dataModelRepository;
         private GenericRepository<LoginJournal> loginJournalRepository;
 
-        public GenericRepository<SysUser> SysUserRepository
+        public GenericRepository<ChatRoomUser> ChatRoomUserRepository
         {
             get
             {
-                if (this.sysUserRepository == null)
+                if (this.chatRoomUserRepository == null)
                 {
-                    this.sysUserRepository = new GenericRepository<SysUser>(context);
+                    this.chatRoomUserRepository = new GenericRepository<ChatRoomUser>(context);
                 }
-                return sysUserRepository;
+                return chatRoomUserRepository;
             }
         }
 

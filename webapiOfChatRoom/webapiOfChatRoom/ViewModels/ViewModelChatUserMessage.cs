@@ -18,6 +18,11 @@ namespace webapiOfChatRoom.ViewModels
         public string TransferManagerUserAccount { get; set; }
 
         // <summary>
+        /// 删除群成员的账号
+        /// </summary>
+        public string DeleteChatUserAccount { get; set; }
+
+        // <summary>
         /// 设置管理员的账号
         /// </summary>
         public string Administrator { get; set; }

@@ -25,10 +25,10 @@ namespace webapiOfChatRoom.Controllers
             try
             {
                 viewModelInformation = new ViewModelInformation();
-                var sysUser = unitOfWork.SysUserRepository.Get().Where(s => s.UserAccount.Equals(viewModelLogin.Account)).FirstOrDefault();//查找是否存在账号
+                var sysUser = unitOfWork.ChatRoomUserRepository.Get().Where(s => s.UserAccount.Equals(viewModelLogin.Account)).FirstOrDefault();//查找是否存在账号
                 if (sysUser != null)
                 {
-                    var sysUsers = unitOfWork.SysUserRepository.Get().Where(s => s.UserAccount.Equals(viewModelLogin.Account) && (s.UserPassword.Equals(viewModelLogin.Password)) || (s.RememberPassword.Equals("1") && (CreateMD5.EncryptWithMD5(CreateMD5.EncryptWithMD5(s.UserPassword)).Equals(viewModelLogin.Password)))).FirstOrDefault();
+                    var sysUsers = unitOfWork.ChatRoomUserRepository.Get().Where(s => s.UserAccount.Equals(viewModelLogin.Account) && (s.UserPassword.Equals(viewModelLogin.Password)) || (s.RememberPassword.Equals("1") && (CreateMD5.EncryptWithMD5(CreateMD5.EncryptWithMD5(s.UserPassword)).Equals(viewModelLogin.Password)))).FirstOrDefault();
                     if (sysUsers != null)
                     {
                         if (viewModelLogin.RememberPassword == "1")

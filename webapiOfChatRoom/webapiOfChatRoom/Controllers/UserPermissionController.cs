@@ -19,7 +19,7 @@ namespace webapiOfChatRoom.Controllers
         {
             ViewModelInformation viewModelInformation = null;
             viewModelInformation = new ViewModelInformation();
-            var sysUser = unitOfWork.SysUserRepository.Get().Where(s => s.UserAccount.Equals(viewModelLogin.Account)).FirstOrDefault();
+            var sysUser = unitOfWork.ChatRoomUserRepository.Get().Where(s => s.UserAccount.Equals(viewModelLogin.Account)).FirstOrDefault();
             viewModelInformation.Message = sysUser.UserPermission;
             return viewModelInformation;
         }

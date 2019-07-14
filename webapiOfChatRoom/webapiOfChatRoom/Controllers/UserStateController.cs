@@ -21,7 +21,7 @@ namespace webapiOfChatRoom.Controllers
             try
             {
                 viewModelInformation = new ViewModelInformation();
-                var user = unitOfWork.SysUserRepository.Get().Where(s => s.UserAccount.Equals(viewModelLogin.Account)).FirstOrDefault();
+                var user = unitOfWork.ChatRoomUserRepository.Get().Where(s => s.UserAccount.Equals(viewModelLogin.Account)).FirstOrDefault();
                 user.UserState = 1;
                 unitOfWork.Save();
                 throw new Exception("更新用户状态成功");

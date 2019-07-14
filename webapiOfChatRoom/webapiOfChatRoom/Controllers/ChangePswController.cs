@@ -25,11 +25,11 @@ namespace webapiOfChatRoom.Controllers
                 string OldPassword = CreateMD5.EncryptWithMD5(viewModelChangePsw.OldPassword);     //原密码
                 string NewPassword = CreateMD5.EncryptWithMD5(viewModelChangePsw.NewPassword);     //新密码
 
-                var u = unitOfWork.SysUserRepository.Get().Where(s => s.UserAccount.Equals(viewModelChangePsw.Account.Trim()) && s.UserPassword.ToLower().Equals(viewModelChangePsw.OldPassword)).FirstOrDefault();//账号是否存在与密码是否相等
+                var u = unitOfWork.ChatRoomUserRepository.Get().Where(s => s.UserAccount.Equals(viewModelChangePsw.Account.Trim()) && s.UserPassword.ToLower().Equals(viewModelChangePsw.OldPassword)).FirstOrDefault();//账号是否存在与密码是否相等
                 if (u != null)
                 {
                     u.UserPassword = viewModelChangePsw.NewPassword;
-                    unitOfWork.SysUserRepository.Update(u);//更改密码
+                    unitOfWork.ChatRoomUserRepository.Update(u);//更改密码
                     unitOfWork.Save();
                     throw new Exception("修改成功！");
                 }

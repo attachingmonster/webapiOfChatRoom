@@ -22,16 +22,16 @@ namespace webapiOfChatRoom.Controllers
             {
 
                 viewModelInformation = new ViewModelInformation();
-                var sysUser = unitOfWork.SysUserRepository.Get().Where(s => s.UserAccount.Equals(viewModelChatUserMessage.UserAccount)).FirstOrDefault();
+                var sysUser = unitOfWork.ChatRoomUserRepository.Get().Where(s => s.UserAccount.Equals(viewModelChatUserMessage.UserAccount)).FirstOrDefault();
                 sysUser.UserPermission = "0";
-                unitOfWork.SysUserRepository.Update(sysUser);
+                unitOfWork.ChatRoomUserRepository.Update(sysUser);
                 unitOfWork.Save();
 
-                var user = unitOfWork.SysUserRepository.Get().Where(s => s.UserAccount.Equals(viewModelChatUserMessage.TransferManagerUserAccount)).FirstOrDefault();
+                var user = unitOfWork.ChatRoomUserRepository.Get().Where(s => s.UserAccount.Equals(viewModelChatUserMessage.TransferManagerUserAccount)).FirstOrDefault();
                 user.UserPermission = "2";
-                unitOfWork.SysUserRepository.Update(user);//保存状态
+                unitOfWork.ChatRoomUserRepository.Update(user);//保存状态
                 unitOfWork.Save();
-                throw new Exception("转让群主给"+""+ viewModelChatUserMessage.TransferManagerUserAccount+""+"成功");
+                throw new Exception("转让群主给"+" "+ viewModelChatUserMessage.TransferManagerUserAccount+" "+"成功");
             }
             catch (Exception ex)
             {

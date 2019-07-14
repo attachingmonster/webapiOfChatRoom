@@ -26,9 +26,9 @@ namespace webapiOfChatRoom.Controllers
                 unitOfWork.LoginJournalRepository.Update(sysUser);
                 unitOfWork.Save();
 
-                var user = unitOfWork.SysUserRepository.Get().Where(s => s.UserAccount.Equals(viewModelLoginJournal.UserAccount)).FirstOrDefault();
+                var user = unitOfWork.ChatRoomUserRepository.Get().Where(s => s.UserAccount.Equals(viewModelLoginJournal.UserAccount)).FirstOrDefault();
                 user.UserState = 0;
-                unitOfWork.SysUserRepository.Update(user);//保存状态
+                unitOfWork.ChatRoomUserRepository.Update(user);//保存状态
                 unitOfWork.Save();
                 throw new Exception("关闭聊天界面信息传输成功");
             }

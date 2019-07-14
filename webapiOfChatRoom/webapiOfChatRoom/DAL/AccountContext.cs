@@ -15,7 +15,7 @@ namespace webapiOfChatRoom.DAL
         {
 
         }
-        public DbSet<SysUser> SysUsers { get; set; }
+        public DbSet<ChatRoomUser> ChatRoomUsers { get; set; }
         public DbSet<DataModel> DataModels { get; set; }
 
         public DbSet<LoginJournal> LoginJournals { get; set; }

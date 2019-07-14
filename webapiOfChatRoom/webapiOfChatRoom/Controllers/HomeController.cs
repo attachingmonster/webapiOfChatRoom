@@ -13,7 +13,7 @@ namespace webapiOfChatRoom.Controllers
         private UnitOfWork unitOfWork = new UnitOfWork();
         public ActionResult Index()
         {
-            var user = unitOfWork.SysUserRepository.Get();
+            var user = unitOfWork.ChatRoomUserRepository.Get();
             ViewBag.Title = "Home Page";
 
             return View();
